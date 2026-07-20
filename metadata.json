@@ -1,0 +1,6 @@
+{
+  "name": "ProbRisk QMRA",
+  "description": "Simulador avanzado de Evaluación Cuantitativa de Riesgos Microbiológicos (QMRA) con análisis de Monte Carlo, impacto económico y manual de interpretación.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

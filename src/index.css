@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-offwhite: #F5F1EA;
+  --color-brand-teal-grey: #2D3E40;
+  --color-brand-slate: #334155;
+  --color-brand-teal: #0D9488;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/40 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+  }
+  
+  .neumorph-flat {
+    @apply bg-brand-offwhite shadow-[6px_6px_12px_#d1cdc7,-6px_-6px_12px_#ffffff];
+  }
+  
+  .neumorph-pressed {
+    @apply bg-brand-offwhite shadow-[inset_6px_6px_12px_#d1cdc7,inset_-6px_-6px_12px_#ffffff];
+  }
+  
+  .dark-neumorph-flat {
+    @apply bg-brand-teal-grey shadow-[4px_4px_8px_#212e30,-4px_-4px_8px_#394e50];
+  }
+  
+  .dark-neumorph-pressed {
+    @apply bg-brand-teal-grey shadow-[inset_4px_4px_8px_#212e30,inset_-4px_-4px_8px_#394e50];
+  }
+}
+
+.high-contrast {
+  /* Core High Contrast Theme */
+  --color-brand-offwhite: #ffffff;
+  --color-brand-teal-grey: #000000;
+  --color-brand-slate: #000000;
+  --color-brand-teal: #00ffff;
+
+  --color-slate-50: #ffffff;
+  --color-slate-100: #ffffff;
+  --color-slate-200: #000000;
+  --color-slate-300: #000000;
+  --color-slate-400: #000000;
+  --color-slate-500: #000000;
+  --color-slate-600: #000000;
+  --color-slate-700: #000000;
+  --color-slate-800: #000000;
+  --color-slate-900: #000000;
+  
+  --color-blue-50: #ffffff;
+  --color-blue-100: #ffffff;
+  --color-blue-200: #000000;
+  --color-blue-300: #000000;
+  --color-blue-400: #000000;
+  --color-blue-500: #0000ff;
+  --color-blue-600: #0000ff;
+
+  --color-teal-50: #ffffff;
+  --color-teal-100: #ffffff;
+  --color-teal-200: #000000;
+  --color-teal-300: #000000;
+  --color-teal-400: #00ffff;
+  --color-teal-500: #008080;
+  --color-teal-600: #004040;
+
+  --color-rose-500: #ff0000;
+  --color-rose-600: #800000;
+  --color-rose-50: #ffffff;
+  
+  --color-amber-500: #ffcc00;
+  --color-amber-600: #aa8800;
+  --color-amber-50: #ffffff;
+  
+  --color-emerald-500: #00ff00;
+  --color-emerald-600: #008800;
+  --color-emerald-50: #ffffff;
+
+  --color-violet-500: #ff00ff;
+  --color-violet-600: #880088;
+  --color-violet-50: #ffffff;
+
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  
+  * {
+    font-weight: 700 !important;
+    border-color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6, b, strong {
+    font-weight: 900 !important;
+    color: #000000 !important;
+  }
+
+  button, a {
+    outline: 2px solid #000000 !important;
+    outline-offset: 2px !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-radius: 4px !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+
+  button:hover, a:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    outline: 2px solid #ffffff !important;
+  }
+
+  input, select, textarea {
+    border: 2px solid #000000 !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-radius: 4px !important;
+    padding: 8px !important;
+  }
+
+  svg {
+    stroke-width: 2.5px !important;
+  }
+
+  /* Structural Overrides */
+  .dark-neumorph-flat, .dark-neumorph-pressed, .neumorph-flat, .neumorph-pressed, .glass {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  aside {
+    background-color: #000000 !important;
+    border-right: 4px solid #000000 !important;
+  }
+
+  aside * {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+  }
+
+  aside button, aside a {
+    outline-color: #ffffff !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  aside button:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Specific high contrast overrides */
+  .text-white, 
+  .text-white\/40, 
+  .text-white\/50, 
+  .text-white\/60, 
+  .text-white\/70, 
+  .text-white\/80, 
+  .text-white\/90 {
+    color: #000000 !important;
+  }
+
+  aside .text-white,
+  aside .text-white\/40,
+  aside .text-white\/50,
+  aside .text-white\/60,
+  aside .text-white\/70,
+  aside .text-white\/80,
+  aside .text-white\/90 {
+    color: #ffffff !important;
+  }
+
+  .bg-teal-500, .bg-blue-600, .bg-indigo-600 {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 3px solid #ffffff !important;
+  }
+
+  .text-teal-400, .text-emerald-400, .text-blue-400, .text-cyan-400 {
+    color: #008888 !important; /* Slightly darker cyan for readability on white */
+  }
+
+  /* Chart colors in high contrast */
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    stroke: #000000 !important;
+    stroke-width: 2px !important;
+  }
+
+  .recharts-text {
+    fill: #000000 !important;
+    font-weight: 800 !important;
+  }
+
+  .recharts-line {
+    stroke-width: 4px !important;
+  }
+
+  .recharts-bar-rectangle {
+    stroke: #000000 !important;
+    stroke-width: 2px !important;
+  }
+
+  /* Focus states */
+  *:focus {
+    outline: 4px solid #0000ff !important;
+    outline-offset: 2px !important;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 transition-colors duration-300 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@layer components {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-300/50 rounded-full hover:bg-slate-400/50 transition-colors;
+  }
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-700/50 hover:bg-slate-600/50;
+  }
+}

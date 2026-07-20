@@ -1,0 +1,86 @@
+[
+  {
+    "pathogen": "Salmonella spp.",
+    "children": 5,
+    "elderly": 5,
+    "immunocompromised": 30,
+    "apply_FS": true,
+    "source": "FAO/WHO 2002 MRA Series 2"
+  },
+  {
+    "pathogen": "E. coli O157:H7 (STEC)",
+    "children": 5,
+    "elderly": 5,
+    "immunocompromised": 20,
+    "apply_FS": true,
+    "source": "USDA-FSIS 2001, Haas 1999"
+  },
+  {
+    "pathogen": "Campylobacter jejuni",
+    "children": 3,
+    "elderly": 3,
+    "immunocompromised": 10,
+    "apply_FS": true,
+    "source": "FAO/WHO 2009"
+  },
+  {
+    "pathogen": "V. parahaemolyticus",
+    "children": 1,
+    "elderly": 2,
+    "immunocompromised": 10,
+    "apply_FS": true,
+    "source": "FDA 2005 VPRA"
+  },
+  {
+    "pathogen": "Vibrio vulnificus",
+    "children": 1,
+    "elderly": 5,
+    "immunocompromised": 80,
+    "apply_FS": true,
+    "source": "FDA 2005, solo en mariscos"
+  },
+  {
+    "pathogen": "Clostridium perfringens",
+    "children": 2,
+    "elderly": 2,
+    "immunocompromised": 5,
+    "apply_FS": true,
+    "source": "USDA-FSIS 2005"
+  },
+  {
+    "pathogen": "Staphylococcus aureus (toxina)",
+    "children": 2,
+    "elderly": 2,
+    "immunocompromised": 5,
+    "apply_FS": true,
+    "source": "FDA 2012 Bad Bug Book"
+  },
+  {
+    "pathogen": "Virus de hepatitis A (HAV)",
+    "children": 1,
+    "elderly": 1,
+    "immunocompromised": 1,
+    "apply_FS": false,
+    "source": "No hay evidencia de mayor susceptibilidad de infección"
+  },
+  {
+    "pathogen": "Norovirus (GI y GII)",
+    "children": 1,
+    "elderly": 1,
+    "immunocompromised": 2,
+    "apply_FS": true,
+    "source": "CDC 2011"
+  },
+  {
+    "pathogen": "Listeria monocytogenes",
+    "children": 1,
+    "elderly": 1,
+    "immunocompromised": 1,
+    "apply_FS": false,
+    "source": "FAO/WHO 2004, r=1.06e-10 para susceptibles",
+    "listeria_r": {
+      "general": 1.06e-12,
+      "susceptible": 1.06e-10
+    }
+  }
+]
