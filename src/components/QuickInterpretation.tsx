@@ -32,15 +32,17 @@ export type HelpTopic =
   | 'haccp'
   | 'initial_load'
   | 'economic_params'
+  | 'source_files'
   | 'growth';
 
 interface QuickInterpretationProps {
   topic: HelpTopic;
   className?: string;
   variant?: 'icon' | 'button' | 'link';
+  label?: string;
 }
 
-export const QuickInterpretation: React.FC<QuickInterpretationProps> = ({ topic, className, variant = 'icon' }) => {
+export const QuickInterpretation: React.FC<QuickInterpretationProps> = ({ topic, className, variant = 'icon', label }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useLanguage();
 
@@ -101,6 +103,33 @@ export const QuickInterpretation: React.FC<QuickInterpretationProps> = ({ topic,
             <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               Valores monetarios asignados a cada evento clínico. Incluyen costos directos (hospitalización, medicinas) e indirectos (ausentismo laboral). Son críticos para el análisis costo-beneficio de intervenciones sanitarias.
             </p>
+          </div>
+        );
+      case 'source_files':
+        return (
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 text-slate-900 dark:text-white">
+              <BookOpen className="w-5 h-5 text-indigo-500" />
+              <h4 className="font-bold text-lg">{t.architectureTitle}</h4>
+            </div>
+            <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              {t.architectureDesc}
+            </p>
+            <div className="space-y-2">
+              {[
+                { name: 'MonteCarloEngine.ts', desc: 'Motor estocástico y lógica QMRA.' },
+                { name: 'useSimulation.tsx', desc: 'Gestión de estado y reactividad.' },
+                { name: 'Dashboard.tsx', desc: 'Interfaz de usuario principal.' },
+                { name: 'ParametersGrid.tsx', desc: 'Entrada de datos y distribuciones.' },
+                { name: 'Charts.tsx', desc: 'Visualizaciones y curvas de riesgo.' },
+                { name: 'translations.ts', desc: 'Diccionario de términos técnicos.' }
+              ].map(file => (
+                <div key={file.name} className="p-3 bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-100 dark:border-white/5">
+                  <p className="text-[10px] font-mono font-bold text-indigo-600 dark:text-indigo-400">{file.name}</p>
+                  <p className="text-[10px] text-slate-500 mt-1">{file.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         );
       case 'monte_carlo':
@@ -250,7 +279,13 @@ export const QuickInterpretation: React.FC<QuickInterpretationProps> = ({ topic,
         )}
         title="Ver interpretación"
       >
-        {variant === 'icon' ? <HelpCircle className="w-4 h-4" /> : variant === 'button' ? 'Interpretación' : 'Leer más'}
+        {variant === 'icon' ? (
+          <HelpCircle className="w-4 h-4" />
+        ) : variant === 'button' ? (
+          label || 'Interpretación'
+        ) : (
+          label || 'Leer más'
+        )}
       </button>
 
       <AnimatePresence>

@@ -11,7 +11,9 @@ import {
   AlertCircle,
   FileText,
   Download,
-  Factory
+  Factory,
+  Cpu,
+  FileCode
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../hooks/useLanguage';
@@ -53,6 +55,7 @@ export default function Manual({ onClose }: { onClose?: () => void }) {
     { id: 'biological', title: t.modelsTitle, icon: Microscope },
     { id: 'economic', title: t.economyTitle, icon: DollarSign },
     { id: 'specs', title: t.specSectionTitle, icon: FileText },
+    { id: 'architecture', title: t.architectureTitle, icon: Cpu },
   ];
 
   return (
@@ -758,6 +761,65 @@ export default function Manual({ onClose }: { onClose?: () => void }) {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 6. System Architecture */}
+      <section id="architecture" className="space-y-8 pt-10">
+        <div className="flex items-center gap-4 text-indigo-900 dark:text-indigo-400 border-b-2 border-indigo-100 dark:border-indigo-900/50 pb-3 transition-colors">
+          <FileCode className="w-6 h-6" />
+          <h3 className="text-2xl font-serif font-bold italic">{t.architectureTitle} y Código Fuente</h3>
+        </div>
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="prose prose-stone dark:prose-invert max-w-none">
+            <p className="text-stone-600 dark:text-slate-400 leading-relaxed">
+              Para garantizar la transparencia algorítmica y facilitar procesos de auditoría técnica, a continuación se detallan los módulos principales del código fuente que rigen la lógica de <strong>{t.appName}</strong>.
+            </p>
+            <div className="mt-6 space-y-4">
+              {[
+                { name: 'MonteCarloEngine.ts', desc: 'Implementa el núcleo estocástico de 10,000 iteraciones y la lógica de muestreo Latin Hypercube.' },
+                { name: 'useSimulation.tsx', desc: 'Hook central que orquestra el flujo de datos entre el motor de cálculo y la interfaz de usuario.' },
+                { name: 'Dashboard.tsx', desc: 'Componente maestro que organiza la visualización de resultados y la navegación por pestañas.' },
+                { name: 'ParametersGrid.tsx', desc: 'Gestiona la entrada de parámetros microbiológicos y la validación de distribuciones estadísticas.' },
+                { name: 'Charts.tsx', desc: 'Biblioteca de visualización científica responsable de renderizar curvas de riesgo y tornados de sensibilidad.' },
+                { name: 'pdfService.ts', desc: 'Servidor lógico para la generación de reportes técnicos en formato PDF siguiendo estándares internacionales.' }
+              ].map(file => (
+                <div key={file.name} className="flex gap-4 p-4 bg-white dark:bg-slate-800/50 rounded-2xl border border-stone-100 dark:border-slate-700 transition-colors shadow-sm">
+                  <div className="w-1.5 h-full bg-indigo-500 rounded-full" />
+                  <div>
+                    <h4 className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400">{file.name}</h4>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{file.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-slate-900 dark:bg-slate-950 p-8 rounded-[2.5rem] border border-slate-800 shadow-2xl space-y-6 relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 opacity-5">
+              <Cpu className="w-64 h-64" />
+            </div>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-400">{t.stackTitle}</h4>
+            <div className="grid grid-cols-2 gap-4">
+               {[
+                 { label: 'Runtime', value: 'React 18' },
+                 { label: 'Language', value: 'TypeScript' },
+                 { label: 'Calculus', value: 'Float64' },
+                 { label: 'Style', value: 'Tailwind' },
+                 { label: 'Animation', value: 'Motion' },
+                 { label: 'Viz', value: 'D3/Recharts' }
+               ].map(tech => (
+                 <div key={tech.label} className="p-3 bg-white/5 rounded-xl border border-white/10">
+                    <p className="text-[8px] text-slate-500 uppercase font-bold">{tech.label}</p>
+                    <p className="text-[10px] text-white font-mono">{tech.value}</p>
+                 </div>
+               ))}
+            </div>
+            <div className="pt-4 border-t border-white/10">
+               <p className="text-[10px] text-slate-400 leading-relaxed font-serif italic">
+                 "La arquitectura modular permite la actualización independiente de los modelos de dosis-respuesta sin afectar la integridad del motor estocástico."
+               </p>
+            </div>
+          </div>
         </div>
       </section>
 

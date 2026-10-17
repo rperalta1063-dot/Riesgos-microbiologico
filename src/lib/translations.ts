@@ -272,6 +272,9 @@ export interface Translation {
   understood: string;
   scaleLinear: string;
   scaleLog: string;
+  architectureTitle: string;
+  architectureDesc: string;
+  stackTitle: string;
 }
 
 export const translations: Record<Language, Translation> = {
@@ -337,6 +340,9 @@ export const translations: Record<Language, Translation> = {
     understood: 'Entendido',
     scaleLinear: 'Lineal',
     scaleLog: 'Log₁₀',
+    architectureTitle: 'Arquitectura del Sistema',
+    architectureDesc: 'Componentes principales del código fuente y lógica QMRA.',
+    stackTitle: 'Stack Tecnológico',
     stable: '',
     haccpActive: 'HACCP ACTIVO',
     haccpInactive: 'HACCP INACTIVO',
@@ -590,6 +596,9 @@ export const translations: Record<Language, Translation> = {
     understood: 'Understood',
     scaleLinear: 'Linear',
     scaleLog: 'Log₁₀',
+    architectureTitle: 'System Architecture',
+    architectureDesc: 'Main source code components and QMRA logic.',
+    stackTitle: 'Tech Stack',
     stable: '',
     haccpActive: 'HACCP ACTIVE',
     haccpInactive: 'HACCP INACTIVE',
@@ -843,6 +852,9 @@ export const translations: Record<Language, Translation> = {
     understood: 'Compris',
     scaleLinear: 'Linéaire',
     scaleLog: 'Log₁₀',
+    architectureTitle: 'Architecture du Système',
+    architectureDesc: 'Principaux composants du code source et logique QMRA.',
+    stackTitle: 'Stack Technologique',
     stable: '',
     haccpActive: 'HACCP ACTIF',
     haccpInactive: 'HACCP INACTIF',
@@ -1096,6 +1108,9 @@ export const translations: Record<Language, Translation> = {
     understood: 'Entendido',
     scaleLinear: 'Linear',
     scaleLog: 'Log₁₀',
+    architectureTitle: 'Arquitetura do Sistema',
+    architectureDesc: 'Principais componentes do código-fonte e lógica QMRA.',
+    stackTitle: 'Stack Tecnológico',
     stable: '',
     haccpActive: 'HACCP ATIVO',
     haccpInactive: 'HACCP INATIVO',

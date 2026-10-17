@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ShieldCheck, AlertTriangle, Info, FileText, CheckCircle2, AlertCircle, HelpCircle, Activity } from 'lucide-react';
 import { SimulationResult, SimulationParams } from '../types';
 import { formatNumber } from '../lib/utils';
+import { QuickInterpretation } from './QuickInterpretation';
 
 interface Props {
   result: SimulationResult;
@@ -150,11 +151,21 @@ export default function ScientificExecutiveSummary({ result, params }: Props) {
           </div>
 
           <div className="p-6 bg-slate-100 dark:bg-slate-800/50 rounded-3xl border border-slate-200 dark:border-slate-700">
-             <div className="flex gap-3">
-                <HelpCircle className="w-4 h-4 text-slate-400 shrink-0" />
-                <p className="text-[9px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium uppercase tracking-tight">
-                  Este reporte cumple con los estándares de reporte de la EFSA y el Codex para la comunicación de riesgos microbiológicos.
-                </p>
+             <div className="flex flex-col gap-4">
+                <div className="flex gap-3">
+                   <HelpCircle className="w-4 h-4 text-slate-400 shrink-0" />
+                   <p className="text-[9px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium uppercase tracking-tight">
+                     Este reporte cumple con los estándares de reporte de la EFSA y el Codex para la comunicación de riesgos microbiológicos.
+                   </p>
+                </div>
+                <div className="pt-2 border-t border-slate-200 dark:border-slate-700">
+                   <QuickInterpretation 
+                    topic="source_files" 
+                    variant="button" 
+                    label="Arquitectura del Código Fuente"
+                    className="w-full justify-start bg-white dark:bg-slate-800" 
+                   />
+                </div>
              </div>
           </div>
         </div>

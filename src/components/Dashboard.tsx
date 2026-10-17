@@ -1016,6 +1016,14 @@ export default function Dashboard() {
                                         </div>
                                       ))}
                                     </div>
+                                    <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+                                      <QuickInterpretation 
+                                        topic="source_files" 
+                                        variant="button" 
+                                        label="Consultar Arquitectura del Código Fuente"
+                                        className="bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 border-indigo-100 dark:border-indigo-900/30" 
+                                      />
+                                    </div>
                                 </div>
 
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
